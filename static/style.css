@@ -1,0 +1,96 @@
+:root {
+    --primary: #6366f1;    /* Indigo */
+    --primary-hover: #4f46e5;
+    --secondary: #10b981;  /* Emerald */
+    --text-main: #1e293b;
+    --text-sub: #64748b;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --border: #e2e8f0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 2.5rem;
+    border-radius: 28px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    text-align: center;
+}
+
+header h1 { font-size: 2rem; margin: 0; color: var(--primary); }
+.subtitle { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 2rem; }
+
+.card { margin: 1.5rem 0; text-align: left; }
+.card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.card-header h3 { margin: 0; font-size: 1.1rem; }
+
+input[type="file"], input[type="text"] {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input:focus { outline: none; border-color: var(--primary); }
+
+button {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 5px;
+}
+
+button:hover:not(:disabled) { background: var(--primary-hover); transform: translateY(-1px); }
+button:disabled { background: #cbd5e1; cursor: not-allowed; }
+
+.btn-secondary { background: var(--text-main); }
+.btn-secondary:hover { background: #000; }
+
+.code-output {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: var(--primary);
+    min-height: 30px;
+    text-align: center;
+}
+
+.divider { height: 1px; background: var(--border); margin: 2rem 0; }
+
+.progress-container {
+    background: #e2e8f0;
+    height: 6px;
+    border-radius: 10px;
+    margin-top: 12px;
+    overflow: hidden;
+    display: none; /* Hidden until transfer starts */
+}
+
+.progress-bar { width: 0%; height: 100%; background: var(--secondary); transition: width 0.3s; }
+.stats { font-size: 0.8rem; color: var(--text-sub); margin-top: 8px; font-family: monospace; }

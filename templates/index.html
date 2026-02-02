@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileFly | Premium P2P Transfer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>FileFly ✈️</h1>
+            <p class="subtitle">Secure, fast, peer-to-peer sharing</p>
+        </header>
+        
+        <div class="card">
+            <div class="card-header">
+                <span class="icon">📤</span>
+                <h3>Send Files</h3>
+            </div>
+            <input type="file" id="fileInput" multiple onchange="checkFiles()">
+            <button id="generateBtn" onclick="generateID()" disabled>Generate Share Code</button>
+            <div id="my-id-display" class="code-output"></div>
+            
+            <div id="send-stats" class="stats"></div>
+            <div class="progress-container"><div id="send-progress" class="progress-bar"></div></div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="icon">📥</span>
+                <h3>Receive Files</h3>
+            </div>
+            <input type="text" id="receiver-id-input" placeholder="Enter 6-digit code" maxlength="6">
+            <button class="btn-secondary" onclick="connectToPeer()">Connect & Download</button>
+            
+            <div id="receive-stats" class="stats"></div>
+            <div class="progress-container"><div id="receive-progress" class="progress-bar"></div></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
